@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Kaitlyn's Kitchen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Lato:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        .wrapper {
+            display: flex;
+            flex-flow: row wrap;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .wrapper > * {
+            padding: 10px;
+            flex: 1 100%;
+            background-color: #feecde;
+
+        }
+        
+        .main {
+            text-align: left;
+            margin: 0;
+            font-family: 'Lato', sans-serif;
+            background-color: #fbf1e5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 20px auto;
+        }
+
+
+        /* Typography */
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            text-align: center;
+            color: #3f2800;
+            font-size: 2.5em;
+            margin-top: 0.5em;
+            text-shadow:
+                1px 1px 1px #dfb57e,
+                2px 2px 1px #dfb57e;
+        }
+
+        p {
+            color: #3f2800;
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin: 1em 2em;
+        }
+
+        strong {
+            color: #3f2800;
+            font-weight: bold;
+            text-shadow:
+                1px 1px 1px #dfb57e,
+                2px 2px 1px #dfb57e;
+        }
+
+        a {
+            color: #3f2800;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Layout Components */
+
+        /* Header */
+        .header {
+            background-color: #feecde;
+            display: flex;
+            align-items: center;
+            align-content: center;
+            justify-content: space-evenly;
+            padding: 0.5em 1em;
+            flex-wrap: wrap;
+        }
+
+        .logo-container {
+            text-align: center;
+            min-width: 120px;
+        }
+
+        .logo-container img {
+            height: auto;
+            width: 120px;
+        }
+
+        /* Navigation & Forms */
+        .site-navigation {
+            display: flex;
+            flex: 5;
+            align-items: center;
+            text-align: center;
+            margin-left: auto;
+        }
+
+        .site-navigation ul {
+            list-style: none;
+            display: flex;
+            flex-grow: 2;
+            justify-content: space-evenly;
+            margin: 0;
+            padding: 0;
+        }
+
+        .site-navigation li {
+            padding: 0 10px;
+        }
+
+        .search-bar {
+            display: flex;
+            flex: 1.3;
+            align-items: center;
+            justify-content: flex-end;
+            max-width: 100%;
+        }
+
+        .search-bar input[type="search"] {
+            width: 100%;
+            padding: 0.5em;
+            font-size: 1em;
+            margin-right: 10px;
+        }
+
+        .search-bar button {
+            padding: 0.5em;
+        }
+
+        /* Sidebar */
+        .site-sidebar {
+            background: #e6c5ad;
+            padding: 10px;
+        }
+
+        .site-sidebar h3 {
+            color: #3f2800;
+            font-weight: bold;
+            text-shadow:
+                1px 1px 1px #dfb57e,
+                2px 2px 1px #dfb57e;
+            margin-bottom: 10px;
+        }
+
+        .site-sidebar a,
+        .site-sidebar a:hover {
+            color: #43372d;
+            text-decoration: none;
+        }
+
+        .sidebar-specials img,
+        .sidebar-workshops img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .sidebar-newsletter-signup input[type="email"] {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            border: 1px solid #988679;
+            background-color: #ffffff;
+            box-sizing: border-box;
+        }
+
+        .sidebar-newsletter-signup button {
+            width: 100%;
+            padding: 10px;
+            background-color: #eda56d;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .sidebar-newsletter-signup button:hover {
+            background-color: #988679;
+        }
+
+        /* Footer */
+        .site-footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #feecde;
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        .footer-links,
+        .footer-social-media {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            color: #3f2800;
+            font-weight: bold;
+            text-shadow:
+                1px 1px 1px #dfb57e,
+                2px 2px 1px #dfb57e;
+        }
+
+
+        .footer-social-media {
+            justify-content: flex-start;
+        }
+
+        .footer-social-media a {
+            margin-right: 15px;
+            color: #3f2800;
+            font-weight: bold;
+            text-shadow:
+                1px 1px 1px #dfb57e,
+                2px 2px 1px #dfb57e;
+        }
+
+        .footer-disclaimer {
+            color: #3f2800;
+            font-weight: bold;
+            text-shadow:
+                1px 1px 1px #dfb57e,
+                2px 2px 1px #dfb57e;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Media Queries */
+        @media all and (min-width: 600px) {
+            .site-sidebar {
+                flex: 1 0 0;
+            }
+        }
+
+        @media all and (min-width: 800px) {
+            .main {
+                flex: 5 0px;
+            }
+
+            .main {
+                order: 1;
+            }
+
+            .site-sidebar {
+                order: 2;
+            }
+
+            .site-footer {
+                order: 3;
+            }
+        }
+    </style>
+    <div class="wrapper">
+        <header class="header">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="https://i.postimg.cc/mk9L3hLR/temp-Image-Njvni-T.avif" alt="Kaitlyn's Kitchen" />
+                </a>
+            </div>
+            <nav class="site-navigation">
+                <ul>
+                    <li><a href="about.html">About Kaitlyn</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="orders.html">Custom Orders</a></li>
+                    <li><a href="workshops.html">Baking Workshops</a></li>
+                    <li><a href="recipes.html">Kaitlyn's Recipes</a></li>
+                    <li><a href="blog.html">Baking Blog</a></li>
+                    <li><a href="contact.html">Contact Kaitlyn</a></li>
+                </ul>
+            </nav>
+            <form class="search-bar" action="/search" method="get">
+                <input type="search" name="q" placeholder="Search...">
+                <button type="submit">Search</button>
+            </form>
+        </header>
+        <main class="main">
+            <h1>Welcome to Kaitlyn's Kitchen!</h1>
+            <p> Welcome to <strong>Kaitlyn's Kitchen</strong>, a haven where passion for baking transforms the finest
+                ingredients into culinary masterpieces. Born from the oven-warmed corners of San Jose, California,
+                Kaitlyn's Kitchen is more than a bakery; it's a journey into the heart of <strong>artisanal
+                    baking</strong>.
+                Kaitlyn, our founder and head baker, embarked on her baking odyssey at the renowned <a
+                    href="https://sfbi.com/about/" title="San Francisco Baking Institute - About Us"><strong>San
+                        Francisco Baking Institute</strong></a>, where precision
+                meets creativity. Her dedication to the craft is evident in every flaky pastry, each decadent cake, and
+                all the sumptuous
+                breads that grace our menu.</p>
+            <a href="https://imgs.xkcd.com/comics/good_code.png" title="Does this count for the bonus points?">
+                <img src="https://i.ibb.co/pnmdsRq/DALL-E-2024-02-01-14-28-17-A-vibrant-and-inviting-display-of-assorted-baked-goods-including-golden-b.png"
+                    alt="Assorted Baked Goods" /></a>
+        </main>
+        <aside class="site-sidebar">
+            <div class="sidebar-section sidebar-specials">
+                <h3>Specials</h3>
+            </div>
+            <div class="sidebar-section sidebar-workshops">
+                <h3>Upcoming Workshops</h3>
+            </div>
+            <div class="sidebar-section sidebar-blog-posts">
+                <h3>Recent Blog Posts</h3>
+            </div>
+            <div class="sidebar-section sidebar-newsletter-signup">
+                <h3>Newsletter Signup</h3>
+                <form>
+                    <input type="email" placeholder="Your email address">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </aside>
+        <footer class="site-footer">
+            <div class="footer-social-media">
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank" aria-label="X">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+                <a href="https://yelp.com" target="_blank" aria-label="Yelp">
+                    <i class="fab fa-yelp"></i>
+                </a>
+            </div>
+            <div class="footer-links">
+                <a href="/privacy-policy.html">Privacy Policy</a>
+                <a href="/terms-of-use.html">Terms of Use</a>
+                <a href="/about.html">About Us</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+            <div class="footer-disclaimer">
+                &copy; 2024 Kaitlyn's Kitchen. All rights reserved.
+            </div>
+        </footer>
+    </div>
+</head>
+
+</html>
